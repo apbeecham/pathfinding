@@ -9,7 +9,7 @@ This program is in its early stages and currently only offers basic funtionality
 Description
 -----------
 
-Pathfinding Visualizer is a simple java swing application for visualizing pathfinding algorithms. It consists of a 50x50 grid that simply steps through the pathfinding algorithm highlighting each grid cell in a different color depending on its state. Each cell is connected to the neighbouring cells surrounding it (diagonal connections are not permitted) and each connection has an equal cost for traversing.
+Pathfinding Visualizer is a simple java swing application for visualizing pathfinding algorithms. It consists of a 50x50 grid that simply steps through the pathfinding algorithm highlighting each grid cell in a different color depending on its state.
 
 ####  Color Key
 
