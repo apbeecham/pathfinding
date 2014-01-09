@@ -11,7 +11,8 @@ import java.util.*;
  ************************************************************/
 public class Vertex implements Comparable<Vertex>{	
 	protected Point position;
-	private double distanceFromStart;
+	private double distanceFromStart = Double.POSITIVE_INFINITY;
+	private double totalCost;
 	private Vertex predecessor;
 	private ArrayList<Edge> edges;
 	
@@ -41,6 +42,10 @@ public class Vertex implements Comparable<Vertex>{
 	 ************************************************************/
 	public void setDistanceFromStart(double distanceFromStart){
 		this.distanceFromStart = distanceFromStart;
+	}	
+	
+	public void setTotalCost(double totalCost){
+		this.totalCost = totalCost;
 	}
 	
 	/************************************************************
@@ -60,6 +65,9 @@ public class Vertex implements Comparable<Vertex>{
 		return distanceFromStart;
 	}
 	
+	public double getTotalCost(){
+		return totalCost;
+	}
 	/************************************************************
 	 * Gets the position of this vertex.
 	 * @return position the position of the vertex in 2D space.
@@ -101,7 +109,7 @@ public class Vertex implements Comparable<Vertex>{
 	 * or equal to another vertex.
 	 ************************************************************/
 	public int compareTo(Vertex other){
-		return Double.compare(distanceFromStart, other.distanceFromStart);
+		return Double.compare(totalCost, other.totalCost);
 	}
 	
 	@Override

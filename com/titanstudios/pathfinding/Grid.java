@@ -18,7 +18,7 @@ public class Grid extends JPanel implements MouseMotionListener{
 	private Point selectedCell;
 	private Cell cells[][];
 	
-	private DijkstraPathfinder pathfinder;
+	private Pathfinder pathfinder;
 		
 	public Grid(int width, int height, int rows, int columns){
 		
@@ -39,8 +39,8 @@ public class Grid extends JPanel implements MouseMotionListener{
 		this.setPreferredSize(new Dimension(width,height));
 	}
 	
-	public void start(){		
-		pathfinder.findShortestPath(cells[2][2], cells[rows - 1][columns- 1], this);	
+	public void start(int step , int algorithm){		
+		pathfinder.findShortestPath(cells[0][0], cells[rows - 1][columns - 6], this, step, algorithm);	
 	}
 	
 	public void update(){
@@ -49,14 +49,14 @@ public class Grid extends JPanel implements MouseMotionListener{
 	
 	public void reset(){
 		pathfinder.stop();
-		pathfinder = new DijkstraPathfinder();
+		pathfinder = new Pathfinder();
 		buildGraph();
 		this.repaint();
 	}
 	
 
 	private void buildGraph(){
-		pathfinder = new DijkstraPathfinder();
+		pathfinder = new Pathfinder();
 		cells = new Cell[rows][columns];
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j < columns; j++){
@@ -67,13 +67,11 @@ public class Grid extends JPanel implements MouseMotionListener{
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j < columns; j++){
 				if(i + 1 < rows)
-					cells[i][j].addEdge(new Edge(5, cells[i + 1][j]));
+					cells[i][j].addEdge(new Edge(columnWidth, cells[i + 1][j]));
 				if(j + 1 < columns)
-					cells[i][j].addEdge(new Edge(5, cells[i][j + 1]));
-				if(i - 1 >= 0)
-					cells[i][j].addEdge(new Edge(5, cells[i - 1][j]));
-				if(j - 1 >= 0)
-					cells[i][j].addEdge(new Edge(5, cells[i][j - 1]));
+					cells[i][j].addEdge(new Edge(rowHeight, cells[i][j + 1]));
+				if(i + 1 < rows && j + 1 < columns)
+					cells[i][j].addEdge(new Edge((int)(rowHeight * 1.4), cells[i + 1][j + 1]));
 			}
 		}
 	}	

@@ -9,7 +9,7 @@ public class PathfindingMain {
 			public void run() {
 				PathfindingFrame frame = new PathfindingFrame();
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setTitle("Pathfinding Visualiser Version 1.0");
+				frame.setTitle("Pathfinding Visualiser Version 1.1");
 				frame.setVisible(true);
 			}			
 		});		
