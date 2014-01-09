@@ -26,12 +26,12 @@ Algorithms
 * Dijkstra's Algorithm
 * TODO - Breadth First
 * TODO - Best First
-* TODO - A*
+* A*
 
 Features
 --------
 
 * Basic user controls (start & reset)
-* TODO - User defined execution speed
+* User defined execution speed
 * TODO - User defined start/goal cells
 * TODO - Obstacles
