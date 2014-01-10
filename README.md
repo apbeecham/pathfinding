@@ -1,11 +1,6 @@
 Pathfinding Visualizer
 ======================
 
-### Note
-
-
-This program is in its early stages and currently only offers basic funtionality.
-
 Description
 -----------
 
@@ -33,5 +28,7 @@ Features
 
 * Basic user controls (start & reset)
 * User defined execution speed
-* TODO - User defined start/goal cells
+* User defined start/goal cells
 * TODO - Obstacles
+
+Feel free to use/edit the source files for any purpose you require.
