@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Point;
 import java.util.*;
 
-import javax.swing.Timer;
-
 public class Pathfinder {
 	
 	public static final int DIJKSTRA = 0;
@@ -88,7 +86,6 @@ public class Pathfinder {
 								next.setColor(Color.BLUE);
 				
 							if(!openList.contains(next) || distanceFromStart < next.getDistanceFromStart()){	
-								openList.remove(next);
 								next.setDistanceFromStart(distanceFromStart);
 								next.setTotalCost(estimate);
 								next.setPredecessor(current);

@@ -1,7 +1,6 @@
 package com.titanstudios.pathfinding;
 
 import java.util.*;
-import java.awt.*;
 
 /************************************************************
  * A graph consisting of vertices connected to each+other via

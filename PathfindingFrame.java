@@ -13,8 +13,11 @@ public class PathfindingFrame extends JFrame implements ActionListener {
 	private JButton resetButton;
 	private JSpinner stepSpinner;
 	private JComboBox algorithmList;
+	private JComboBox gridEditorList;
 	private JLabel stepSpinnerLabel;
 	private JLabel algorithmListLabel;
+	private JLabel gridEditorListLabel;
+	
 	public PathfindingFrame(){
 		grid = new Grid(400,400,50,50);
 		
@@ -40,6 +43,12 @@ public class PathfindingFrame extends JFrame implements ActionListener {
 	    algorithmList = new JComboBox(algorithms);
 	    algorithmListLabel = new JLabel("Search Algorithm:");
 	    algorithmListLabel.setLabelFor(algorithmList);
+	    
+	    String editList[] = {"Start", "Goal"};
+	    gridEditorList = new JComboBox(editList);
+	    gridEditorList.addActionListener(this);
+	    gridEditorListLabel = new JLabel("Place on Grid:");
+	    gridEditorListLabel.setLabelFor(gridEditorList);
 		
 		controlPanel.add(playButton);
 		controlPanel.add(resetButton);
@@ -47,6 +56,8 @@ public class PathfindingFrame extends JFrame implements ActionListener {
 		controlPanel.add(stepSpinner);
 		controlPanel.add(algorithmListLabel);
 		controlPanel.add(algorithmList);
+		controlPanel.add(gridEditorListLabel);
+		controlPanel.add(gridEditorList);
 		controlPanel.setPreferredSize(new Dimension(400,75));
 		
 		container.add(grid,BorderLayout.CENTER);
@@ -58,8 +69,7 @@ public class PathfindingFrame extends JFrame implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e){
-		if("start".equals(e.getActionCommand())){
-			
+		if("start".equals(e.getActionCommand())){			
 			
 			SwingWorker worker = new SwingWorker<Void,Void>(){
 				protected Void doInBackground(){
@@ -68,13 +78,17 @@ public class PathfindingFrame extends JFrame implements ActionListener {
 				}
 			};
 			playButton.setEnabled(false);
-			worker.execute();
-			
+			worker.execute();			
 		}
 		
 		if("reset".equals(e.getActionCommand())){
 			grid.reset();
 			playButton.setEnabled(true);
-		}		
+		}
+		
+		if(e.getSource() == gridEditorList){
+			grid.setPositionable(gridEditorList.getSelectedIndex());
+		}
+		
 	}
 }
