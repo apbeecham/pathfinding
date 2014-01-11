@@ -28,7 +28,7 @@ UI
 
 How to Run
 ----------
-1. Download the [latest version of java] (http://www.oracle.com/technetwork/java/javase/downloads/java-se-jre-7-download-432155.html)
+1. Download the [latest version of java] (http://www.oracle.com/technetwork/java/javase/downloads/java-se-jre-7-download-432155.html) (if you haven't already)
 2. Download the [latest release](https://github.com/apbeecham/pathfinding/releases)
 3. Run the jar file
 
