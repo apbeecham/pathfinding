@@ -17,18 +17,19 @@ Pathfinding Visualizer is a simple java swing application for visualizing pathfi
 
 Algorithms
 ----------
+The program currently allows you to search the grid with either dijkstra's algorithm or A*.
 
-* Dijkstra's Algorithm
-* TODO - Breadth First
-* TODO - Best First
-* A*
-
-Features
---------
+UI
+--
 
 * Basic user controls (start & reset)
 * User defined execution speed
-* User defined start/goal cells
-* TODO - Obstacles
+* User defined start/goal cells (select which to place from a drop down list and then click on the desired grid cell)
+
+How to Run
+----------
+1. Download the [latest version of java] (http://www.oracle.com/technetwork/java/javase/downloads/java-se-jre-7-download-432155.html)
+2. Download the [latest release](https://github.com/apbeecham/pathfinding/releases)
+3. Run the jar file
 
 Feel free to use/edit the source files for any purpose you require.
